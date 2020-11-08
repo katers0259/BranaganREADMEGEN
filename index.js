@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
-const fs = requir('fs');
-const util = require('uti');
+const fs = require('fs');
+
 
 const markdown = require('./utils/generateMarkdown');
 
@@ -13,18 +13,23 @@ const questions = [{
 },
 {
     type:"input",
-    message: "Give a description of what the project is about",
+    message: "Give a description of what the project is about?",
     name: "Description",
 },
+
 {
-    type:"checkbox",
-    message: "Choose your table of contents items",
-    name: "stack",
-    choices: ['Title','Description','Usage','License','Contributors'],
+    type:"input",
+    message: "input your table of contents, seperated by commas:",
+    name: "Table of Contents",
 },
 {
     type:"input",
-    message:"How do you use the app, and what do you need to install?",
+    message:"What does the user need to install to use the application?",
+    name:"Installation",
+},
+{
+    type:"input",
+    message:"How do you use the app?",
     name: "Usage",
 },
 {
@@ -36,6 +41,11 @@ const questions = [{
     type:"input",
     message:"What license are you using?",
     name: "License",
+},
+{
+    type:"input",
+    message:"What do you need to do to test this app?",
+    name: "Test",
 },
 {
     type:"input",
@@ -51,11 +61,19 @@ const questions = [{
 
 // function to write README file
 function writeToFile(fileName, data) {
-}
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            return;
+        };
+    });
+};
 
 // function to initialize program
 function init() {
-
+inquirer.prompt(questions).then(function(data) {
+    writeToFile("README.md", markdown(data));
+    console.log(data);
+})
 }
 
 // function call to initialize program
