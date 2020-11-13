@@ -12,24 +12,24 @@ const questions = [{
     name: "Title",
 },
 {
-    type:"input",
+    type: "input",
     message: "Give a description of what the project is about?",
     name: "Description",
 },
 
 {
-    type:"input",
+    type: "input",
     message: "input your table of contents, seperated by commas:",
     name: "Table of Contents",
 },
 {
-    type:"input",
-    message:"What does the user need to install to use the application?",
-    name:"Installation",
+    type: "input",
+    message: "What does the user need to install to use the application?",
+    name: "Installation",
 },
 {
-    type:"input",
-    message:"How do you use the app?",
+    type: "input",
+    message: "How do you use the app?",
     name: "Usage",
 },
 {
@@ -38,24 +38,24 @@ const questions = [{
     name: "Contributors",
 },
 {
-    type:"input",
-    message:"What license are you using?",
+    type: "input",
+    message: "What license are you using?",
     name: "License",
 },
 {
-    type:"input",
-    message:"What do you need to do to test this app?",
+    type: "input",
+    message: "What do you need to do to test this app?",
     name: "Test",
 },
 {
-    type:"input",
-    message:"What is your Github username?",
-    name:"Username",
+    type: "input",
+    message: "What is your Github username?",
+    name: "Username",
 },
 {
-    type:"input",
-    message:"What is your email address?",
-    name:"Email",
+    type: "input",
+    message: "What is your email address?",
+    name: "Email",
 },
 ];
 
@@ -70,10 +70,10 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-inquirer.prompt(questions).then((data) => {
-    writeToFile("README.md", markdown(data));
-   // console.log(data);
-})
+    inquirer.prompt(questions).then((data) => {
+        writeToFile("README.md", markdown(data));
+        // console.log(data);
+    })
 }
 
 // function call to initialize program
