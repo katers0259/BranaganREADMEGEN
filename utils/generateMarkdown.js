@@ -9,12 +9,12 @@ function generateMarkdown(data) {
 
 
   ### Table Of Contents
-  -[Installation](#installation)
-  -[Usage](#usage)
-  -[License](#license)
-  -[Contributors](#contributors)
-  -[Test](#test)
-  -[Contact](#contact)
+  *[Installation](#installation)
+  *[Usage](#usage)
+  *[License](#license)
+  *[Contributors](#contributors)
+  *[Test](#test)
+  *[Contact](#contact)
   ### Installation
   The following must be installed for the application to run.
  
